@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" style="margin-bottom: 16px;">
+    <button mat-icon-button (click)="prevMonth()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <span>{{ selectedMonth | date: 'MMMM yyyy' }}</span>
+    <button mat-icon-button (click)="nextMonth()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="calendar-container">
+    <div *ngFor="let day of days" class="calendar-day" [cdkDropListData]="day.appointments" cdkDropList [cdkDropListConnectedTo]="connectedTo" (cdkDropListDropped)="onDrop($event)" [id]="day.date.toISOString()">
+      <h3 (click)="openAddDialog(day.date)" [class.today]="isToday(day.date)">
+        {{ day.date | date: 'fullDate' }}
+      </h3>
+      <app-calendar-item
+        *ngFor="let appointment of day.appointments"
+        [appointment]="appointment"
+        (deleteAppointment)="onDeleteAppointment($event)"
+        (click)="openEditDialog(appointment)"
+        cdkDrag
+        [cdkDragData]="appointment"
+      ></app-calendar-item>
+    </div>
+  </div>
+  

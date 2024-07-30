@@ -1,0 +1,8 @@
+<mat-card>
+    <mat-card-title>{{ appointment.title }}</mat-card-title>
+    <mat-card-subtitle>{{ appointment.date | date: 'short' }}</mat-card-subtitle>
+    <button mat-icon-button (click)="onDelete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card>
+  
