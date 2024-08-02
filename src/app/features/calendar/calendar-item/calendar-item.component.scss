@@ -1,22 +1,28 @@
-mat-card {
-    margin-top: 8px;
-    padding: 8px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  mat-card-title {
-    font-size: 1rem;
-    margin-bottom: 4px;
-  }
-  
-  mat-card-subtitle {
-    font-size: 0.875rem;
-    color: #666;
-  }
+.appointment-card{
+  width: 100%;
+  padding: 0px 2px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  max-width: 100%;
+}
+.appointment-card:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.title{
+  display: inline-block;
+  width: 90px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+.time{
+  width: 70px;
+  margin-left: 5px;
+}
   
   button {
     float: right;
+    max-width: 40px;
   }
   

@@ -1,41 +1,58 @@
 .calendar-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-left: 16px;
-  }
-  
-  .calendar-day {
-    width: calc(100% / 7 - 16px);
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    background-color: #f9f9f9;
-    cursor: pointer;
-  }
-  
-  h3 {
-    margin-top: 0;
-  }
-  
-  h3.today {
-    color: #d32f2f;
-    font-weight: bold;
-  }
-  
-  .calendar-item {
-    margin-top: 8px;
-    padding: 8px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-left: 4px;
+  justify-content: center;
+}
+
+.calendar-day {
+  width: calc(100% / 7 - 4px);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  min-height: 150px;
+  /* Centering content horizontally and aligning to top */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Align at the top */
+  min-width: 190px;
+}
+.more-link{
+  padding: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+h3 {
+  margin-top: 0;
+  text-align: center; /* Center text horizontally */
+  margin-bottom: 0px;
+}
+
+.date.today {
+  font-weight: bold;
+  padding: 2px 11px;
+  background-color: rgb(62, 140, 223);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.calendar-item {
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Ensure the calendar item takes full width */
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}

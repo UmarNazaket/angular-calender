@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" style="margin-bottom: 16px;">
+<mat-toolbar color="secondary" style="margin-bottom: 16px;">
     <button mat-icon-button (click)="prevMonth()">
       <mat-icon>chevron_left</mat-icon>
     </button>
@@ -8,10 +8,21 @@
     </button>
   </mat-toolbar>
   <div class="calendar-container">
-    <div *ngFor="let day of days" class="calendar-day" [cdkDropListData]="day.appointments" cdkDropList [cdkDropListConnectedTo]="connectedTo" (cdkDropListDropped)="onDrop($event)" [id]="day.date.toISOString()">
+    <div *ngFor="let day of days" class="calendar-day" 
+         [cdkDropListData]="day.appointments" 
+         cdkDropList 
+         [cdkDropListConnectedTo]="connectedTo" 
+         (cdkDropListDropped)="onDrop($event)" 
+         [id]="day.date.toISOString()">
+      
       <h3 (click)="openAddDialog(day.date)" [class.today]="isToday(day.date)">
-        {{ day.date | date: 'fullDate' }}
+        {{ day.date | date: 'MMM' }} 
       </h3>
+
+      <h3 class="date" (click)="openAddDialog(day.date)" [class.today]="isToday(day.date)">
+        {{ day.date | date: 'd' }}
+      </h3>
+      
       <app-calendar-item
         *ngFor="let appointment of day.appointments"
         [appointment]="appointment"
@@ -22,4 +33,5 @@
       ></app-calendar-item>
     </div>
   </div>
+  
   
